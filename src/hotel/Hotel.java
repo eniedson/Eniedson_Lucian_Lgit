@@ -23,4 +23,9 @@ public class Hotel {
 	public double getLucroTotal() {
 		return recepcao.getLucroTotal();
 	}
+	
+	@Override
+	public String toString() {
+		return recepcao.toString();
+	}
 }

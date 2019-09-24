@@ -1,6 +1,9 @@
 package hotel;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Recepcao {
 	
@@ -18,6 +21,7 @@ public class Recepcao {
 		for (Estadia estadia : estadias) {
 			if (estadia.getNome().equals(nome)) {
 				estadias.remove(estadia);
+				break;
 			}
 		}
 	}
@@ -36,8 +40,9 @@ public class Recepcao {
 	
 	public String toString() {
 		String saida = "Estadias:";
+		DecimalFormat formater = new DecimalFormat("0.00", new DecimalFormatSymbols(Locale.ENGLISH));
 		for (Estadia estadia : estadias) {
-			saida += "\n" + estadia.getNome() + "(" + estadia.getTipo() + "): " + estadia.getDias() + " dias com o preco de R$ " + estadia.getValor();
+			saida += "\n" + estadia.getNome() + " (" + estadia.getTipo() + "): " + estadia.getDias() + " dias com o preco de R$ " + formater.format(estadia.getValor());
 		}
 		return saida;
 	}
