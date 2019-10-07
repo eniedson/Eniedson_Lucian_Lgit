@@ -1,29 +1,39 @@
 package hotel;
 
+/**
+ * 
+ * Classe que possui todas as funcionalidades disponiveis de um hotel
+ * 
+ * 
+ */
+
 public class Hotel {
 
+	/**
+	* Receoção do hotel
+	*/
 	private Recepcao recepcao;
-	
+
 	public Hotel() {
 		recepcao = new Recepcao();
 	}
-	
+
 	public void checkIn(String nome, String tipo, int idade, int dias, double valor) {
 		recepcao.checkIn(nome, tipo, idade, dias, valor);
 	}
-	
+
 	public void checkOut(String nome) {
 		recepcao.checkOut(nome);
 	}
-	
+
 	public int getNumDeHospedes() {
 		return recepcao.getNumDeHospedes();
 	}
-	
+
 	public double getLucroTotal() {
 		return recepcao.getLucroTotal();
 	}
-	
+
 	@Override
 	public String toString() {
 		return recepcao.toString();
